@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://eiseu.github.io/burgershot/ -->
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Vultur Lé Culturé</title>
+	<link rel="shortcut icon" href="css/images/VLC.png">
+	<link rel="stylesheet" href="css/index.css">
+	<script type="text/javascript" src="https://use.fontawesome.com/3f95c72d48.js"></script>
+</head>
+
+<body onload="loadPage()" class="dark-theme">
+	<div id="form">
+		<div class="form-group">
+			<span style="font-weight: bold;">Vultur Lé Culturé</span>
+			<span id="action-buttons">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<div class="btn" onclick="newOrder();" title="Clear current order"><i class="fa fa-refresh" aria-hidden="true"></i> New Order</div>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<div class="btn" onclick="toggleCombos()" title="Select current active combos">
+					<i class="fa fa-cog" aria-hidden="true"></i> Combo Settings
+				</div></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<label for="darkmode" class="switch">
+			  <input type="checkbox" id="darkmode" name="darkmode" value="darkmode">
+			  <span class="slider round"></span>
+			</label>
+		</div>
+
+		<div class="form-group" id="table">
+			<table>
+				<tbody><tr><td></td><td></td><td></td></tr>
+					<tr>
+					<td colspan="3"><center><strong><u>Gem/Relic/Jewelry Purchases</u></strong></center></td>
+					</tr>
+					<tr><td>
+						<center>
+							<button class="btn" title="Add 1x LQ Citrine" onclick="add(&quot;LQ Citrine&quot;)"><strong>
+								<img src="css/images/citrine.png" width="20" height="20">LQ Citrine</strong></button>
+							<br>Qty: <strong><span id="LQ Citrine-#">0</span></strong> | $300 | 
+							<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit LQ Citrine quantity" onclick="editQuantity(&quot;LQ Citrine&quot;)"></i> 
+							<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x LQ Citrine" onclick="remove(&quot;LQ Citrine&quot;)"></i>
+						</center>
+				        	</td>
+						<td>
+						<center>
+							<button class="btn" title="Add 1x MQ Citrine" onclick="add(&quot;MQ Citrine&quot;)"><strong>
+								<img src="css/images/citrine.png" width="20" height="20">MQ Citrine</strong></button>
+							<br>Qty: <strong><span id="MQ Citrine-#">0</span></strong> | $400 | 
+							<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit MQ Citrine quantity" onclick="editQuantity(&quot;MQ Citrine&quot;)"></i> 
+							<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x MQ Citrine" onclick="remove(&quot;MQ Citrine&quot;)"></i>
+						</center>
+							</td>
+						<td>
+						<center>
+							<button class="btn" title="Add 1x HQ Citrine" onclick="add(&quot;HQ Citrine&quot;)"><strong>
+								<img src="css/images/citrine.png" width="20" height="20">HQ Citrine</strong></button>
+							<br>Qty: <strong><span id="HQ Citrine-#">0</span></strong> | $500 | 
+							<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit HQ Citrine quantity" onclick="editQuantity(&quot;HQ Citrine&quot;)"></i> 
+							<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x HQ Citrine" onclick="remove(&quot;HQ Citrine&quot;)"></i>
+						</center>
+							</td>
+						<td>
+						<center>
+							<button class="btn" title="Add 1x LQ Jade" onclick="add(&quot;LQ Jade&quot;)"><strong>
+								<img src="css/images/jade.png" width="20" height="20">LQ Jade</strong></button>
+							<br>Qty: <strong><span id="LQ Jade-#">0</span></strong> | $50 | 
+							<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit LQ Jade quantity" onclick="editQuantity(&quot;LQ Jade&quot;)"></i> 
+							<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x LQ Jade" onclick="remove(&quot;LQ Jade&quot;)"></i>
+						</center>
+							</td>
+						<td>
+						<center>
+							<button class="btn" title="Add 1x MQ Jade" onclick="add(&quot;MQ Jade&quot;)"><strong>
+								<img src="css/images/jade.png" width="20" height="20">MQ Jade</strong></button>
+							<br>Qty: <strong><span id="MQ Jade-#">0</span></strong> | $100 | 
+							<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit MQ Jade quantity" onclick="editQuantity(&quot;MQ Jade&quot;)"></i> 
+							<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x MQ Jade" onclick="remove(&quot;MQ Jade&quot;)"></i>
+						</center>
+							</td>
+						<td>
+							<center>
+								<button class="btn" title="Add 1x HQ Jade" onclick="add(&quot;HQ Jade&quot;)"><strong>
+									<img src="css/images/jade.png" width="20" height="20">HQ Jade</strong></button>
+								<br>Qty: <strong><span id="HQ Jade-#">0</span></strong> | $150 | 
+								<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit HQ Jade quantity" onclick="editQuantity(&quot;HQ Jade&quot;)"></i> 
+								<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x HQ Jade" onclick="remove(&quot;HQ Jade&quot;)"></i>
+						</center>
+							</td>
+							<td>
+								<center>
+									<button class="btn" title="Add 1x LQ Aquamarine" onclick="add(&quot;LQ Aquamarine&quot;)"><strong>
+										<img src="css/images/aquamarine.png" width="20" height="20">LQ Aquamarine</strong></button>
+									<br>Qty: <strong><span id="LQ Aquamarine-#">0</span></strong> | $100 | 
+									<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit LQ Aquamarine quantity" onclick="editQuantity(&quot;LQ Aquamarine&quot;)"></i> 
+									<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x LQ Aquamarine" onclick="remove(&quot;LQ Aquamarine&quot;)"></i>
+								</center>
+									</td>
+								<td>
+								<center>
+									<button class="btn" title="Add 1x MQ Aquamarine" onclick="add(&quot;MQ Aquamarine&quot;)"><strong>
+										<img src="css/images/aquamarine.png" width="20" height="20">MQ Aquamarine</strong></button>
+									<br>Qty: <strong><span id="MQ Aquamarine-#">0</span></strong> | $150 | 
+									<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit MQ Aquamarine quantity" onclick="editQuantity(&quot;MQ Aquamarine&quot;)"></i> 
+									<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x MQ Aquamarine" onclick="remove(&quot;MQ Aquamarine&quot;)"></i>
+								</center>
+									</td>
+								<td>
+								<center>
+									<button class="btn" title="Add 1x HQ Aquamarine" onclick="add(&quot;HQ Aquamarine&quot;)"><strong>
+										<img src="css/images/aquamarine.png" width="20" height="20">HQ Aquamarine</strong></button>
+									<br>Qty: <strong><span id="HQ Aquamarine-#">0</span></strong> | $200 | 
+									<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit HQ Aquamarine quantity" onclick="editQuantity(&quot;HQ Aquamarine&quot;)"></i> 
+									<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x HQ Aquamarine" onclick="remove(&quot;HQ Aquamarine&quot;)"></i>
+								</center>
+									</td>
+								<td>
+								<center>
+									<button class="btn" title="Add 1x LQ Sapphire" onclick="add(&quot;LQ Sapphire&quot;)"><strong>
+										<img src="css/images/sapphire.png" width="20" height="20">LQ Sapphire</strong></button>
+									<br>Qty: <strong><span id="LQ Sapphire-#">0</span></strong> | $200 | 
+									<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit LQ Sapphire quantity" onclick="editQuantity(&quot;LQ Sapphire&quot;)"></i> 
+									<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x LQ Sapphire" onclick="remove(&quot;LQ Sapphire&quot;)"></i>
+								</center>
+									</td>
+								<td>
+								<center>
+									<button class="btn" title="Add 1x MQ Sapphire" onclick="add(&quot;MQ Sapphire&quot;)"><strong>
+										<img src="css/images/sapphire.png" width="20" height="20">MQ Sapphire</strong></button>
+									<br>Qty: <strong><span id="MQ Sapphire-#">0</span></strong> | $300 | 
+									<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit MQ Sapphire quantity" onclick="editQuantity(&quot;MQ Sapphire&quot;)"></i> 
+									<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x MQ Sapphire" onclick="remove(&quot;MQ Sapphire&quot;)"></i>
+								</center>
+									</td>
+								<td>
+									<center>
+										<button class="btn" title="Add 1x HQ Sapphire" onclick="add(&quot;HQ Sapphire&quot;)"><strong>
+											<img src="css/images/sapphire.png" width="20" height="20">HQ Sapphire</strong></button>
+										<br>Qty: <strong><span id="HQ Sapphire-#">0</span></strong> | $400 | 
+										<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit HQ Sapphire quantity" onclick="editQuantity(&quot;HQ Sapphire&quot;)"></i> 
+										<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x HQ Sapphire" onclick="remove(&quot;HQ Sapphire&quot;)"></i>
+								</center>
+									</td>
+									<td>
+										<center>
+											<button class="btn" title="Add 1x LQ Ruby" onclick="add(&quot;LQ Ruby&quot;)"><strong>
+												<img src="css/images/ruby.png" width="20" height="20">LQ Ruby</strong></button>
+											<br>Qty: <strong><span id="LQ Ruby-#">0</span></strong> | $200 | 
+											<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit LQ Ruby quantity" onclick="editQuantity(&quot;LQ Ruby&quot;)"></i> 
+											<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x LQ Ruby" onclick="remove(&quot;LQ Ruby&quot;)"></i>
+										</center>
+											</td>
+										<td>
+										<center>
+											<button class="btn" title="Add 1x MQ Ruby" onclick="add(&quot;MQ Ruby&quot;)"><strong>
+												<img src="css/images/ruby.png" width="20" height="20">MQ Ruby</strong></button>
+											<br>Qty: <strong><span id="MQ Ruby-#">0</span></strong> | $300 | 
+											<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit MQ Ruby quantity" onclick="editQuantity(&quot;MQ Ruby&quot;)"></i> 
+											<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x MQ Ruby" onclick="remove(&quot;MQ Ruby&quot;)"></i>
+										</center>
+											</td>
+										<td>
+										<center>
+											<button class="btn" title="Add 1x HQ Ruby" onclick="add(&quot;HQ Ruby&quot;)"><strong>
+												<img src="css/images/ruby.png" width="20" height="20">HQ Ruby</strong></button>
+											<br>Qty: <strong><span id="HQ Ruby-#">0</span></strong> | $400 | 
+											<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit HQ Ruby quantity" onclick="editQuantity(&quot;HQ Ruby&quot;)"></i> 
+											<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x HQ Ruby" onclick="remove(&quot;HQ Ruby&quot;)"></i>
+										</center>
+											</td>
+										<td>
+										<center>
+											<button class="btn" title="Add 1x LQ Diamond" onclick="add(&quot;LQ Diamond&quot;)"><strong>
+												<img src="css/images/diamond.png" width="20" height="20">LQ Diamond</strong></button>
+											<br>Qty: <strong><span id="LQ Diamond-#">0</span></strong> | $300 | 
+											<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit LQ Diamond quantity" onclick="editQuantity(&quot;LQ Diamond&quot;)"></i> 
+											<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x LQ Diamond" onclick="remove(&quot;LQ Diamond&quot;)"></i>
+										</center>
+											</td>
+										<td>
+										<center>
+											<button class="btn" title="Add 1x MQ Diamond" onclick="add(&quot;MQ Diamond&quot;)"><strong>
+												<img src="css/images/diamond.png" width="20" height="20">MQ Diamond</strong></button>
+											<br>Qty: <strong><span id="MQ Diamond-#">0</span></strong> | $400 | 
+											<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit MQ Diamond quantity" onclick="editQuantity(&quot;MQ Diamond&quot;)"></i> 
+											<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x MQ Diamond" onclick="remove(&quot;MQ Diamond&quot;)"></i>
+										</center>
+											</td>
+										<td>
+											<center>
+												<button class="btn" title="Add 1x HQ Diamond" onclick="add(&quot;HQ Diamond&quot;)"><strong>
+													<img src="css/images/diamond.png" width="20" height="20">HQ Diamond</strong></button>
+												<br>Qty: <strong><span id="HQ Diamond-#">0</span></strong> | $500 | 
+												<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit HQ Diamond quantity" onclick="editQuantity(&quot;HQ Diamond&quot;)"></i> 
+												<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x HQ Diamond" onclick="remove(&quot;HQ Diamond&quot;)"></i>
+										</center>
+											</td>
+											<td>
+												<center>
+													<button class="btn" title="Add 1x LQ Tanzanite" onclick="add(&quot;LQ Tanzanite&quot;)"><strong>
+														<img src="css/images/tanzanite.png" width="20" height="20">LQ Tanzanite</strong></button>
+													<br>Qty: <strong><span id="LQ Tanzanite-#">0</span></strong> | $300 | 
+													<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit LQ Tanzanite quantity" onclick="editQuantity(&quot;LQ Tanzanite&quot;)"></i> 
+													<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x LQ Tanzanite" onclick="remove(&quot;LQ Tanzanite&quot;)"></i>
+												</center>
+													</td>
+												<td>
+												<center>
+													<button class="btn" title="Add 1x MQ Tanzanite" onclick="add(&quot;MQ Tanzanite&quot;)"><strong>
+														<img src="css/images/tanzanite.png" width="20" height="20">MQ Tanzanite</strong></button>
+													<br>Qty: <strong><span id="MQ Tanzanite-#">0</span></strong> | $350 | 
+													<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit MQ Tanzanite quantity" onclick="editQuantity(&quot;MQ Tanzanite&quot;)"></i> 
+													<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x MQ Tanzanite" onclick="remove(&quot;MQ Tanzanite&quot;)"></i>
+												</center>
+													</td>
+												<td>
+												<center>
+													<button class="btn" title="Add 1x HQ Tanzanite" onclick="add(&quot;HQ Tanzanite&quot;)"><strong>
+														<img src="css/images/tanzanite.png" width="20" height="20">HQ Tanzanite</strong></button>
+													<br>Qty: <strong><span id="HQ Tanzanite-#">0</span></strong> | $400 | 
+													<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit HQ Tanzanite quantity" onclick="editQuantity(&quot;HQ Tanzanite&quot;)"></i> 
+													<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x HQ Tanzanite" onclick="remove(&quot;HQ Tanzanite&quot;)"></i>
+												</center>
+													</td>
+													<td>
+														<center>
+															<button class="btn" title="Add 1x Unidentified Relic" onclick="add(&quot;Unidentified Relic&quot;)"><strong>
+																<img src="css/images/unidentified_relic.png" width="20" height="20">Unidentified Relic</strong></button>
+															<br>Qty: <strong><span id="Unidentified Relic-#">0</span></strong> | $500 | 
+															<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Unidentified Relic quantity" onclick="editQuantity(&quot;Unidentified Relic&quot;)"></i> 
+															<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Unidentified Relic" onclick="remove(&quot;Unidentified Relic&quot;)"></i>
+														</center>
+															</td>
+															<td>
+																<center>
+																	<button class="btn" title="Add 1x Jewelry Part" onclick="add(&quot;Jewelry Part&quot;)"><strong>
+																		<img src="css/images/jewelry_part.png" width="20" height="20">Jewelry Part</strong></button>
+																	<br>Qty: <strong><span id="Jewelry Part-#">0</span></strong> | $150 | 
+																	<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Jewelry Part quantity" onclick="editQuantity(&quot;Jewelry Part&quot;)"></i> 
+																	<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Jewelry Part" onclick="remove(&quot;Jewelry Part&quot;)"></i>
+																</center>
+																	</td>
+						</td></tr><tr><td colspan="3">
+							<center><strong><u>Relic/Ring Sales</u></strong></center></td></tr>
+					<tr>
+						<td>
+							<center><button class="btn" title="Add 1x Jade Ring" onclick="add(&quot;Jade Ring&quot;)"><strong>
+							<img src="css/images/jade_ring.png" width="20" height="20">Jade Ring</strong></button>
+							<br>Qty: <strong><span id="Jade Ring-#">0</span></strong> | $7500 | 
+							<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Jade Ring quantity" onclick="editQuantity(&quot;Jade Ring&quot;)"></i> 
+							<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Jade Ring" onclick="remove(&quot;Jade Ring&quot;)"></i></center></td>
+							<td>
+								<center><button class="btn" title="Add 1x Citrine Ring" onclick="add(&quot;Citrine Ring&quot;)"><strong>
+								<img src="css/images/citrine_ring.png" width="20" height="20">Citrine Ring</strong></button>
+								<br>Qty: <strong><span id="Citrine Ring-#">0</span></strong> | $10000 | 
+								<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Citrine Ring quantity" onclick="editQuantity(&quot;Citrine Ring&quot;)"></i> 
+								<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Citrine Ring" onclick="remove(&quot;Citrine Ring&quot;)"></i></center></td>
+								<td>
+									<center><button class="btn" title="Add 1x Aquamarine Ring" onclick="add(&quot;Aquamarine Ring&quot;)"><strong>
+									<img src="css/images/aquamarine_ring.png" width="20" height="20">Aquamarine Ring</strong></button>
+									<br>Qty: <strong><span id="Aquamarine Ring-#">0</span></strong> | $5000 | 
+									<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Aquamarine Ring quantity" onclick="editQuantity(&quot;Aquamarine Ring&quot;)"></i> 
+									<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Aquamarine Ring" onclick="remove(&quot;Aquamarine Ring&quot;)"></i></center></td>
+									<td>
+										<center><button class="btn" title="Add 1x Sapphire Ring" onclick="add(&quot;Sapphire Ring&quot;)"><strong>
+										<img src="css/images/sapphire_ring.png" width="20" height="20">Sapphire Ring</strong></button>
+										<br>Qty: <strong><span id="Sapphire Ring-#">0</span></strong> | $7500 | 
+										<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Sapphire Ring quantity" onclick="editQuantity(&quot;Sapphire Ring&quot;)"></i> 
+										<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Sapphire Ring" onclick="remove(&quot;Sapphire Ring&quot;)"></i></center></td>
+										<td>
+											<center><button class="btn" title="Add 1x Relic Repair" onclick="add(&quot;Relic Repair&quot;)"><strong>
+											<img src="css/images/relic_repair.png" width="20" height="20">Relic Repair</strong></button>
+											<br>Qty: <strong><span id="Relic Repair-#">0</span></strong> | $10000 | 
+											<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Relic Repair quantity" onclick="editQuantity(&quot;Relic Repair&quot;)"></i> 
+											<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Relic Repair" onclick="remove(&quot;Relic Repair&quot;)"></i></center></td>
+											<td>
+												<center><button class="btn" title="Add 1x Relic Appraisal" onclick="add(&quot;Relic Appraisal&quot;)"><strong>
+												<img src="css/images/relic_appraisal.png" width="20" height="20">Relic Appraisal</strong></button>
+												<br>Qty: <strong><span id="Relic Appraisal-#">0</span></strong> | $15000 | 
+												<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Relic Appraisal quantity" onclick="editQuantity(&quot;Relic Appraisal&quot;)"></i> 
+												<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Relic Appraisal" onclick="remove(&quot;Relic Appraisal&quot;)"></i></center></td>
+												<td>
+													<center><button class="btn" title="Add 1x Gem Sales" onclick="add(&quot;Gem Sales&quot;)"><strong>
+													<img src="css/images/gem_sales.png" width="20" height="20">Gem Sales</strong></button>
+													<br>Qty: <strong><span id="Gem Sales-#">0</span></strong> | $1000 | 
+													<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Gem Sales quantity" onclick="editQuantity(&quot;Gem Sales&quot;)"></i> 
+													<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Gem Sales" onclick="remove(&quot;Gem Sales&quot;)"></i></center></td>																					
+							<td></td>
+					</tr>
+					<tr><td colspan="3">
+						<input type="checkbox" id="half_off-DISCOUNT" name="half_off-DISCOUNT" value="half_off-DISCOUNT">
+						<label for="half_off-DISCOUNT">50% Discount </label><br>
+						<input type="checkbox" id="twentyfive_off-DISCOUNT" name="twentyfive_off-DISCOUNT" value="twentyfive_off-DISCOUNT">
+						<label for="twentyfive_off-DISCOUNT">25% Discount</label><br>
+						<input type="checkbox" id="blackout-DISCOUNT" name="blackout-DISCOUNT" value="blackout-DISCOUNT">
+						<label for="blackout-DISCOUNT">15% Discount</label><br></td></tr></tbody></table></div>
+		<div>
+			<span><i>Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by Adam Swanson (Accepting donations, State ID: 21197)</i></span>
+		</div>
+	</div>
+	<pre id="reportBody"><img src="css/images/VLC.png" width="15%">
+
+<strong>ITEMS ORDERED:</strong>
+
+
+
+<strong>SUBTOTAL:</strong> <span class="green">$0</span></pre>
+<script type="text/javascript" src="js/order-generator.js"></script>
+
+</body></html>
